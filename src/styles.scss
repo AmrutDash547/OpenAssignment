@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+  .mat-slider.mat-slider-horizontal .mat-slider-track-wrapper {
+    height: 5px;
+    border-radius: 10px
+  }
+  .mat-slider.mat-slider-horizontal .mat-slider-track-background,
+  .mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+    height: 100%;
+  }
+  .mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+    background-color: #663399;
+  }
+  .mat-accent .mat-slider-thumb {
+    height: 25PX;
+    width: 25px;
+    background-color: #663399;
+    border: solid 5px white;
+    bottom: -15px;
+    right: -15px;
+  }
+  .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
+    background-color: white;
+  }
+
+.mat-select-value {
+    font-size: 25px
+}
+
+.mat-form-field-ripple {
+   background-color: #663399 !important;
+  }
+  .mat-slide-toggle.mat-checked .mat-slide-toggle-bar{
+    background-color: #663399;
+  }
+  .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb{
+    background-color: white;
+    border: 1px solid #663399;
+  }
+

@@ -1,0 +1,137 @@
+<div class="page">
+
+  <mat-toolbar class="toolbar"
+             [ngClass]="{'mat-elevation-z5' : true, 'sticky' : isSticky}">
+    <img class="logo-toolbar" src="../assets/img/logo.png">
+    <div class="products-toolbar">Products</div>
+    <div class="solutions-toolbar">Solutions</div>
+    <div class="pricing-toolbar">Pricing</div>
+    <button mat-button class="login-toolbar">Login</button>
+    <button mat-button class="get-started-toolbar">Get Started</button>
+  </mat-toolbar>
+
+  <div class="logo"></div>
+  <div class="blob-small"></div>
+  <div class="circle"></div>
+  <div class="video"></div>
+  <div class="products">Products</div>
+  <div class="solutions">Solutions</div>
+  <div class="pricing">Pricing</div>
+  <button mat-button class="login">Login</button>
+  <button mat-button class="get-started">Get Started</button>
+  <div class="title1">
+      We make it Super Simple
+  </div>
+  <div class="underline1"></div>
+  <mat-card class="mat-elevation-z3 eligibility-calculator">
+      <mat-card-header class="header">
+          <mat-card-title>Eligibility Calculator</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <div class="monthly-income">
+              <div class="label">Monthly Income</div>
+              <div class="value">{{monthlyIncome | currency: 'INR':true}}</div>
+              <mat-slider min="100000" max="300000" step="1" [(ngModel)]="monthlyIncome"
+                  (input)="monthlyIncomeChange($event)"></mat-slider>
+              <div>
+                <span class="start-value">{{minIncome | currency: 'INR':true}}</span>
+                <span class="end-value" style="float: right;">{{maxIncome | currency: 'INR':true}}</span>
+              </div>
+          </div>
+          <div class="monthly-expense">
+              <div class="label">Monthly Expense</div>
+              <div class="value">{{monthlyExpense | currency: 'INR':true}}</div>
+              <mat-slider max="300000" step="1" [(ngModel)]="monthlyExpense" (input)="monthlyExpenseChange($event)">
+              </mat-slider>
+          </div>
+          <div class="tenure">
+              <div class="label">Repayment Tenure</div>
+              <mat-select [(ngModel)]="selectedTenure">
+                  <mat-option *ngFor="let repayment of repaymentTenureList" [value]="repayment">{{repayment}}
+                  </mat-option>
+              </mat-select>
+          </div>
+          <div class="optional-loan">
+              <span class="label">Do you have any existing loans?</span>
+              <mat-slide-toggle checked class="float-right"></mat-slide-toggle>
+          </div>
+          <div class="emi">
+              <div class="label">EMI of existing loan (optional)</div>
+              <mat-form-field class="example-form-field">
+                  <input class="value" matInput type="text" [(ngModel)]="emi">
+              </mat-form-field>
+          </div>
+      </mat-card-content>
+  </mat-card>
+  <mat-card class="mat-elevation-z3 loan">
+      <mat-card-content>
+          <div class="loan-amount">
+              <div class="label">Loan Amount</div>
+              <div class="value">{{(monthlyIncome - monthlyExpense)| currency: 'INR':true}}</div>
+          </div>
+          <div class="emi">
+              <div class="label">Your EMI will be</div>
+              <div class="value">{{emi | currency: 'INR':true}}</div>
+          </div>
+          <div class="button">
+              <button mat-raised-button>GET MONEY</button>
+          </div>
+      </mat-card-content>
+  </mat-card>
+  <div *ngFor="let i of [1,2,3,4]">
+      <div *ngFor="let j of ovalCircle">
+          <div class="dots" [ngStyle]="{'left': (442 + j*20) + 'px', 'top': (776 + i*20) + 'px'}"></div>
+      </div>
+  </div>
+
+  <div *ngFor="let i of [1,2,3,4]">
+      <div *ngFor="let j of ovalCircle">
+          <div class="dots" [ngStyle]="{'left': (1438 + j*20) + 'px', 'top': (916 + i*20) + 'px'}"></div>
+      </div>
+  </div>
+
+  <div class="wave-background"></div>
+
+  <mat-card class="card1">
+      <mat-card-header>
+          <mat-card-title><div class="icon"></div></mat-card-title>
+          <mat-card-title><div>Quick cash disbursement</div></mat-card-title>
+          <mat-card-subtitle><div>Get terms loans that your business needs within 72 hrs</div></mat-card-subtitle>
+      </mat-card-header>
+  </mat-card>
+  <mat-card class="card2">
+      <mat-card-header>
+          <mat-card-title><div class="icon"></div></mat-card-title>
+          <mat-card-title><div>Ace your business finances</div></mat-card-title>
+          <mat-card-subtitle><div>Manage banking, accounting & everything in between, on one platform</div></mat-card-subtitle>
+      </mat-card-header>
+  </mat-card>
+
+  <mat-card class="card3">
+      <mat-card-header>
+          <mat-card-title><div class="icon"></div></mat-card-title>
+          <mat-card-title> <div>Low-interest rate</div></mat-card-title>
+          <mat-card-subtitle><div>Achieve your financial goals with an amazing interest rate starting at 13% per annum</div></mat-card-subtitle>
+      </mat-card-header>
+  </mat-card>
+
+  <mat-card class="card4">
+      <mat-card-header>
+          <mat-card-title><div class="icon"></div></mat-card-title>
+          <mat-card-title><div>Loans to fight COVID-19</div></mat-card-title>
+          <mat-card-subtitle><div>Zero EMI for first 3 months on Back-to-Business loans of upto 1 lakh</div></mat-card-subtitle>
+      </mat-card-header>
+  </mat-card>
+
+  <mat-card class="card5">
+      <mat-card-header>
+          <mat-card-title><div class="icon"></div></mat-card-title>
+          <mat-card-title><div class="card-title">Zero Paperwork</div></mat-card-title>
+          <mat-card-subtitle><div class="card-content">Get started instantly by submitting only your basic details & bank statements</div></mat-card-subtitle>
+      </mat-card-header>
+  </mat-card>
+  <div class="title2">Boost your business with Open</div>
+  <div class="underline2"></div>
+  <div class="text">Get your hands on a term loan that’s<br> crafted for your business</div>
+  <button mat-button class="open-account-btn">Get an Open Account</button>
+</div>
